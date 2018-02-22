@@ -1,0 +1,171 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+@section scripts{
+    <script src="~/Scripts/Controllers/RegistrationController.js"></script>
+}
+
+<link rel="stylesheet" type="text/css" href="~/Content/Pages/MainPage.css" />
+
+<div ng-app="App">
+    <div ng-controller="RegistrationController">
+        <div class="grandContaniner">
+            <h1>{{rega}}</h1>
+            <div class="centerContainer">
+                <div class="col-sm-6 col-sm-offset-3">
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">Registration</h3>
+                        </div>
+
+                        <div class="panel-body">
+                            <form name="registrationForm">
+                                <p></p>
+                                <div class="form-group">
+                                    <div class="row">
+                                        <div class="col-sm-offset-1">
+                                            <div class="col-sm-5">
+                                                <label>First Name</label>
+                                                <input required class="form-control" type="text" id="firstName" name="firstName"
+                                                       ng-model="firstName" tabindex="1"/>
+                                            </div>
+                                            <div class="col-sm-5">
+                                                <label>Last Name</label>
+                                                <input required class="form-control" type="text" id="lastName" name="lastName"
+                                                       ng-model="lastName" tabindex="2"/>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="row">
+                                        <div class="col-sm-offset-1 col-sm-9">
+                                            <label>E-mail</label>
+                                            <input required class="form-control" type="email" id="email" name="email"
+                                                   ng-model="email" tabindex="3"/>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="row">
+                                        <div class="col-sm-offset-1 col-sm-9">
+                                            <label>Password</label>
+                                            <input required class="form-control" type="password" id="password" name="password"
+                                                   ng-model="password" tabindex="4"/>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="row">
+                                        <div class="col-sm-offset-1 col-sm-9">
+                                            <label>Repeat password</label>
+                                            <input required class="form-control" type="password" id="repeatedPssword" name="repeatedPssword"
+                                                   ng-model="repeatedPassword" tabindex="5"/>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="row">
+                                        <div class="col-sm-offset-1">
+                                            <div class="col-sm-5">
+                                                <label>City</label>
+                                                <input required class="form-control" type="text" id="city" name="city"
+                                                       ng-model="city" tabindex="6"/>
+                                            </div>
+                                            <div class="col-sm-5">
+                                                <label>Street</label>
+                                                <input required class="form-control" type="text" id="street" name="street"
+                                                       ng-model="street" tabindex="7"/>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-sm-offset-1">
+                                            <div class="col-sm-5">
+                                                <label>House</label>
+                                                <input required class="form-control" type="text" id="house" name="house"
+                                                       ng-model="house" tabindex="8"/>
+                                            </div>
+                                            <div class="col-sm-5">
+                                                <label>Flat</label>
+                                                <input class="form-control" type="text" id="flat" name="flat"
+                                                       ng-model="flat" tabindex="9"/>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-check">
+                                    <div class="row">
+                                        <div class="col-sm-offset-1 col-sm-9">
+                                            <label>Are you registering a company?</label>
+                                            <input type="checkbox" ng-model="isCompany" ng-change="showCompany(); subscriptionSelection()"/>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-check">
+                                    <div class="row" ng-hide="isCompany">
+                                        <div class="col-sm-offset-1 col-sm-9">
+                                            <label>Are you an employee of a registered company?</label>
+                                            <input type="checkbox" ng-model="isEmployee" ng-change="showCompany()"/>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group" ng-show="showCompanyCredentials">
+                                    <div class="row">
+                                        <div class="col-sm-offset-2 col-sm-8">
+                                            <p></p>
+                                            <label>Enter company e-mail and password</label>
+                                            <div class="row">
+                                                <div class="col-sm-offset-1 col-sm-9">
+                                                    <label>E-mail</label>
+                                                    <input class="form-control" type="email" id="companyEmail" name="companyEmail"
+                                                           ng-model="companyEmail" tabindex="3"/>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-sm-offset-1 col-sm-9">
+                                                    <label>Password</label>
+                                                    <input class="form-control" type="password" id="companypassword" name="companypassword"
+                                                           ng-model="companyPassword" tabindex="4"/>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group" ng-hide="isEmployee">
+                                    <div class="row">
+                                        <div class="col-sm-offset-1 col-sm-9">
+                                            <label>Subscription</label>
+                                            <select class="custom-select mb-2 mr-sm-2 mb-sm-0"
+                                                    name="subscriptionSelection" ng-model="subscription" ng-change="subscriptionSelection()">
+                                                <option value="0">Lite</option>
+                                                <option value="1">Professional</option>
+                                                <option value="2" ng-selected="isCompany">Enterprise</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <h1>{{registrationForm.email.$valid}}</h1>
+                                <div>
+                                    <input class="btn btn-primary btn-block" type="submit" id="registerButton"
+                                           ng-click="RegisterUser()" value="Register" tabindex="10">
+                                </div>
+                                <div id="spinnersblock" class="centerspinners" ng-hide="HideSpinner">
+                                    <div id="block_1" class="barlittle"></div>
+                                    <div id="block_2" class="barlittle"></div>
+                                    <div id="block_3" class="barlittle"></div>
+                                    <div id="block_4" class="barlittle"></div>
+                                    <div id="block_5" class="barlittle"></div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+

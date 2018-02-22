@@ -1,0 +1,71 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+@section scripts{
+    <script src="~/Scripts/Controllers/LoginController.js"></script>
+}
+
+<link rel="stylesheet" type="text/css" href="~/Content/Pages/MainPage.css"/>
+
+<div ng-app="App">
+    
+    <div ng-controller="LoginController">
+        <div class="grandContaniner">
+            
+            <div class="centerContainer">
+                
+                <div class="col-sm-6 col-sm-offset-3">
+                    
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">Login</h3>
+                        </div>
+
+                        <div class="panel-body">
+                            <form id="postform">
+                                <p></p>
+                                <div class="form-group input-group">
+                                    <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                                    <input class="form-control" type="text" id="login" name="login" 
+                                           ng-model="login" placeholder="Login" tabindex="1" 
+                                           ng-change="SetLoginButtonEnable()" />
+                                </div>
+                                <div class="form-group input-group">
+                                    <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+                                    <input class="form-control" type="password" id="password" name="password"
+                                           ng-model="password" placeholder="Password" tabindex="2" 
+                                           ng-change="SetLoginButtonEnable()" />
+                                </div>
+                                <div>
+                                    <input class="btn btn-primary btn-block" type="submit" id="loginbutton" 
+                                           ng-click="LoginUser()" value="Login" tabindex="3" disabled="disabled">
+                                </div>
+                                <div class="row lineAfterLogin">
+                                    <div class="col-md-6 text-center">
+                                        @Html.ActionLink("Forgot password?", "Index", "Home")
+                                    </div>
+                                    <div class="col-md-6 text-center">
+                                         @Html.ActionLink("Register", "Register", "Home")
+                                    </div>
+                                </div>
+                                <div id="spinnersblock" class="centerspinners" ng-hide="HideSpinner">
+                                    <div id="block_1" class="barlittle"></div>
+                                    <div id="block_2" class="barlittle"></div>
+                                    <div id="block_3" class="barlittle"></div>
+                                    <div id="block_4" class="barlittle"></div>
+                                    <div id="block_5" class="barlittle"></div>
+                                </div>
+                            </form>
+                            <div class="text-center warninglabel">
+                                {{loginpasswordAnswer}}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+         
+        </div>
+    </div>
+
+</div>

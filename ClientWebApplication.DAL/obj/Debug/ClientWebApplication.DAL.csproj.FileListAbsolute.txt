@@ -1,0 +1,13 @@
+C:\Users\Anatoliy\Documents\adminrepo\ClientWebApplication\ClientWebApplication.DAL\bin\Debug\ClientWebApplication.DAL.dll.config
+C:\Users\Anatoliy\Documents\adminrepo\ClientWebApplication\ClientWebApplication.DAL\bin\Debug\ClientWebApplication.DAL.dll
+C:\Users\Anatoliy\Documents\adminrepo\ClientWebApplication\ClientWebApplication.DAL\bin\Debug\ClientWebApplication.DAL.pdb
+C:\Users\Anatoliy\Documents\adminrepo\ClientWebApplication\ClientWebApplication.DAL\bin\Debug\CommonDll.dll
+C:\Users\Anatoliy\Documents\adminrepo\ClientWebApplication\ClientWebApplication.DAL\bin\Debug\EntityFramework.dll
+C:\Users\Anatoliy\Documents\adminrepo\ClientWebApplication\ClientWebApplication.DAL\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Anatoliy\Documents\adminrepo\ClientWebApplication\ClientWebApplication.DAL\bin\Debug\CommonDll.pdb
+C:\Users\Anatoliy\Documents\adminrepo\ClientWebApplication\ClientWebApplication.DAL\bin\Debug\CommonDll.dll.config
+C:\Users\Anatoliy\Documents\adminrepo\ClientWebApplication\ClientWebApplication.DAL\bin\Debug\EntityFramework.xml
+C:\Users\Anatoliy\Documents\adminrepo\ClientWebApplication\ClientWebApplication.DAL\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Anatoliy\Documents\adminrepo\ClientWebApplication\ClientWebApplication.DAL\obj\Debug\ClientWebApplication.DAL.csprojResolveAssemblyReference.cache
+C:\Users\Anatoliy\Documents\adminrepo\ClientWebApplication\ClientWebApplication.DAL\obj\Debug\ClientWebApplication.DAL.dll
+C:\Users\Anatoliy\Documents\adminrepo\ClientWebApplication\ClientWebApplication.DAL\obj\Debug\ClientWebApplication.DAL.pdb
